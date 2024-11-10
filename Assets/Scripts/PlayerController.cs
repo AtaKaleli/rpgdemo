@@ -4,15 +4,53 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody2D rb;
+
+
+    [SerializeField] private float moveSpeed = 5.0f;
+    private Vector2 movement;
+
+
+
+    private PlayerControls playerControls;
+
+
+    private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        playerControls = new PlayerControls();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        playerControls.Enable();
     }
+
+
+
+    private void Update()
+    {
+
+        HandlePlayerInput();
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+    private void HandlePlayerInput()
+    {
+        movement = playerControls.Movement.Move.ReadValue<Vector2>();
+        
+       
+    }
+
+    private void Move()
+    {
+        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+    }
+
 }
