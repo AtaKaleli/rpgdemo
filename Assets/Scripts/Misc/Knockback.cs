@@ -5,18 +5,27 @@ using UnityEngine;
 public class Knockback : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Material defaultMat;
+    private SpriteRenderer sr;
 
-    public bool CanBeKnocked { get; private set; }
-    public bool IsKnocked { get; private set; }
-
+    [Header("Knockback")]
     [SerializeField] private float knockbackAmount;
+    [SerializeField] private float knockedTime;
+    public bool IsKnocked { get; private set; }
+    public bool CanBeKnocked { get; private set; }
+
+    [Header("Damage Flash")]
+    [SerializeField] private Material whiteFlashMaterial;
 
 
+    
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        defaultMat = sr.material;
     }
 
     private void Start()
@@ -32,12 +41,15 @@ public class Knockback : MonoBehaviour
 
     public IEnumerator KnockbackCoroutine()
     {
+        sr.material = whiteFlashMaterial;
         CanBeKnocked = false;
         IsKnocked = true;
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(knockedTime);
 
+        sr.material = defaultMat;
         CanBeKnocked = true;
         IsKnocked = false;
     }
+
 }

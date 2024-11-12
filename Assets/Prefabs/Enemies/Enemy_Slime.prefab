@@ -286,6 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackAmount: 10
+  knockedTime: 0.15
+  whiteFlashMaterial: {fileID: 2100000, guid: fe06f672815da53449be97ebfcd6db46, type: 2}
 --- !u!1 &2727651699922895465
 GameObject:
   m_ObjectHideFlags: 0

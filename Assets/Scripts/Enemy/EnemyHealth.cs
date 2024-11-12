@@ -23,25 +23,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         currentHealth = startingHealth;
     }
-    /*
-    public void TakeDamage(int damage)
-    {
-        if (!knockback.CanBeKnocked)
-            return;
-
-        StartCoroutine(knockback.KnockbackCoroutine());
-        knockback.GetKnockedBack(PlayerController.instance.transform);
-        currentHealth -= damage;
-        DetectHeath();
-    }*/
-
-    private void DetectHeath()
-    {
-        if(currentHealth <= 0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
 
     public void Damage(int damage)
     {
@@ -53,4 +34,25 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         currentHealth -= damage;
         DetectHeath();
     }
+    
+
+    private void DetectHeath()
+    {
+        if(currentHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    /*
+    public void TakeDamage(int damage)
+    {
+        if (!knockback.CanBeKnocked)
+            return;
+
+        StartCoroutine(knockback.KnockbackCoroutine());
+        knockback.GetKnockedBack(PlayerController.instance.transform);
+        currentHealth -= damage;
+        DetectHeath();
+    }*/
 }
