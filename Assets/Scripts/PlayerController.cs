@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
+
     private PlayerControls playerControls;
     
     private Rigidbody2D rb;
@@ -15,13 +18,16 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
 
 
-    private bool isFacingRight = true;
+    public bool IsFacingRight { get; private set; }
 
 
 
 
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+
         playerControls = new PlayerControls();
         
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +40,10 @@ public class PlayerController : MonoBehaviour
         playerControls.Enable();
     }
 
+    private void Start()
+    {
+        IsFacingRight = true;
+    }
 
 
     private void Update()
@@ -77,13 +87,13 @@ public class PlayerController : MonoBehaviour
 
         float distance = mouseWorldPos.x - transform.position.x;
 
-        if ((distance < 0 && isFacingRight) || (distance > 0 && !isFacingRight))
+        if ((distance < 0 && IsFacingRight) || (distance > 0 && !IsFacingRight))
             Flip();
     }
 
     private void Flip()
     {
-        isFacingRight = !isFacingRight;
+        IsFacingRight = !IsFacingRight;
         transform.Rotate(0, 180, 0);
     }
 
