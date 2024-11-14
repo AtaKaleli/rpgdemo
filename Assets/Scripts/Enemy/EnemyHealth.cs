@@ -9,7 +9,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private int currentHealth;
     private Knockback knockback;
 
-    
+    [SerializeField] private GameObject deathVFX;
+    [SerializeField] private Transform deathVFXParent;
 
 
 
@@ -38,8 +39,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void DetectHeath()
     {
+        print(currentHealth);
         if(currentHealth <= 0)
         {
+            Instantiate(deathVFX, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

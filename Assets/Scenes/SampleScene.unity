@@ -279,6 +279,7 @@ MonoBehaviour:
   slashRespawnPoint: {fileID: 1568034268}
   slashRespawnParent: {fileID: 1289297445}
   swordCollider: {fileID: 1442818289}
+  swordAttackCD: 0.4
 --- !u!1001 &433539740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -696,7 +697,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2727651699878624090, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2727651699878624090, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -742,6 +743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Slime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2727651699878624094, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
 --- !u!1001 &1157532881
@@ -753,7 +758,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2727651699878624090, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2727651699878624090, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -799,39 +804,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Slime (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2727651699878624094, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
---- !u!1 &1281242287
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1281242288}
-  m_Layer: 0
-  m_Name: SwordCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1281242288
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281242287}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1289297444
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +851,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2727651699878624090, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2727651699878624090, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
       propertyPath: m_LocalPosition.x

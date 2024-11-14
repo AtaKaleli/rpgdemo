@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwordController : MonoBehaviour
@@ -14,6 +13,10 @@ public class SwordController : MonoBehaviour
     [SerializeField] private GameObject swordCollider;
 
     private GameObject slashAnim;
+
+    [SerializeField] private float swordAttackCD;
+    private bool isAttacking;
+    private bool canAttack = true;
 
 
     private void Awake()
@@ -30,16 +33,46 @@ public class SwordController : MonoBehaviour
 
     private void Start()
     {
-        playerControls.Combat.Attack.started += _ => Attack(); 
+        playerControls.Combat.Attack.started += _ => StartAttacking();
+        playerControls.Combat.Attack.canceled += _ => StopAttacking();
 
+    }
+
+
+    private void Update()
+    {
+        Attack();
+    }
+
+    private void StartAttacking()
+    {
+        isAttacking = true;
+    }
+
+    private void StopAttacking()
+    {
+        isAttacking = false;
     }
 
     private void Attack()
     {
-        anim.SetTrigger("attack");
-        swordCollider.SetActive(true);
-        InstantiateSlashVFX();
+        if (isAttacking && canAttack)
+        {
+            anim.SetTrigger("attack");
+            swordCollider.SetActive(true);
+            InstantiateSlashVFX();
+            StartCoroutine(AttackTimeCoroutine());
+        }
     }
+
+    private IEnumerator AttackTimeCoroutine()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(swordAttackCD);
+        canAttack = true;
+    }
+
+
 
     private void InstantiateSlashVFX()
     {
@@ -48,7 +81,7 @@ public class SwordController : MonoBehaviour
 
     public void SwingUpFlipAnimEvent()
     {
-        if(playerController.IsFacingRight)
+        if (playerController.IsFacingRight)
             slashAnim.transform.rotation = Quaternion.Euler(180, 0, 0);
         else
             slashAnim.transform.rotation = Quaternion.Euler(180, 180, 0);
