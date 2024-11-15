@@ -16,10 +16,15 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5.0f;
     private Vector2 movement;
-
-
     public bool IsFacingRight { get; private set; }
 
+    [Header("Dash Ability Information")]
+    [SerializeField] private float dashSpeedMultiplier;
+    [SerializeField] private float dashTimer;
+    [SerializeField] private float dashCooldown;
+    private float defaultMoveSpeed;
+    private bool canDash = true;
+    private TrailRenderer trailRenderer;
 
 
 
@@ -33,6 +38,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         cam = Camera.main;
+        trailRenderer = GetComponentInChildren<TrailRenderer>();
     }
 
     private void OnEnable()
@@ -43,6 +49,9 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         IsFacingRight = true;
+        defaultMoveSpeed = moveSpeed;
+
+        playerControls.Combat.Dash.started += _ => DashAbility();
     }
 
 
@@ -95,6 +104,24 @@ public class PlayerController : MonoBehaviour
     {
         IsFacingRight = !IsFacingRight;
         transform.Rotate(0, 180, 0);
+    }
+
+    private void DashAbility()
+    {
+        if(canDash)
+            StartCoroutine(DashTimerCouroutine());
+    }
+
+    private IEnumerator DashTimerCouroutine()
+    {
+        canDash = false;
+        trailRenderer.emitting = true;
+        moveSpeed *= dashSpeedMultiplier;
+        yield return new WaitForSeconds(dashTimer);
+        trailRenderer.emitting = false;
+        moveSpeed = defaultMoveSpeed;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 
 }

@@ -7,6 +7,7 @@ public class SwordController : MonoBehaviour
     private Animator anim;
     private PlayerController playerController;
 
+    [Header("Slash Effect Information")]
     [SerializeField] private GameObject slashVFX;
     [SerializeField] private Transform slashRespawnPoint;
     [SerializeField] private Transform slashRespawnParent;
@@ -14,6 +15,7 @@ public class SwordController : MonoBehaviour
 
     private GameObject slashAnim;
 
+    [Header("Sword Attack Information")]
     [SerializeField] private float swordAttackCD;
     private bool isAttacking;
     private bool canAttack = true;
