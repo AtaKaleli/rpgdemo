@@ -39,7 +39,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void DetectHeath()
     {
-        print(currentHealth);
         if(currentHealth <= 0)
         {
             Instantiate(deathVFX, transform.position, Quaternion.identity);

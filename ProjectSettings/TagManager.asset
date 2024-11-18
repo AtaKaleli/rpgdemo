@@ -44,3 +44,15 @@ TagManager:
   - name: Weapon
     uniqueID: 1963914687
     locked: 0
+  - name: Environment
+    uniqueID: 1450689563
+    locked: 0
+  - name: Enemy
+    uniqueID: 2767293485
+    locked: 0
+  - name: Player
+    uniqueID: 3885691213
+    locked: 0
+  - name: 3D
+    uniqueID: 253319735
+    locked: 0

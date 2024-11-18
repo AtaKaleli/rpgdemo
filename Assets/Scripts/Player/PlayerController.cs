@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,15 +7,17 @@ public class PlayerController : MonoBehaviour
 
 
     private PlayerControls playerControls;
-    
+
     private Rigidbody2D rb;
     private Animator anim;
-    private Camera cam;
+
+
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5.0f;
     private Vector2 movement;
     public bool IsFacingRight { get; private set; }
+    public bool CanMove { get; set; }
 
     [Header("Dash Ability Information")]
     [SerializeField] private float dashSpeedMultiplier;
@@ -30,16 +31,25 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null && this.gameObject != null)
+            Destroy(this.gameObject);
+        else
             instance = this;
 
+
         playerControls = new PlayerControls();
-        
+
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        cam = Camera.main;
         trailRenderer = GetComponentInChildren<TrailRenderer>();
+
+
+
+        DontDestroyOnLoad(gameObject);
+
     }
+
+
 
     private void OnEnable()
     {
@@ -49,6 +59,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         IsFacingRight = true;
+        CanMove = true;
         defaultMoveSpeed = moveSpeed;
 
         playerControls.Combat.Dash.started += _ => DashAbility();
@@ -57,8 +68,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        
 
-        HandlePlayerInput();
+        HandleMovementInput();
         AnimationController();
         FlipController();
 
@@ -77,22 +89,26 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("yVelocity", movement.y);
     }
 
-    private void HandlePlayerInput()
+    private void HandleMovementInput()
     {
-        movement = playerControls.Movement.Move.ReadValue<Vector2>();
-        
-       
+        if (CanMove)
+            movement = playerControls.Movement.Move.ReadValue<Vector2>();
+        else
+            movement = new Vector2(0, 0);
     }
 
     private void Move()
     {
-        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+        if(CanMove)
+            rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
     private void FlipController()
     {
+
+
         Vector3 mousePos = Input.mousePosition;
-        Vector3 mouseWorldPos = cam.ScreenToWorldPoint(mousePos);
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePos);
 
         float distance = mouseWorldPos.x - transform.position.x;
 
@@ -108,7 +124,7 @@ public class PlayerController : MonoBehaviour
 
     private void DashAbility()
     {
-        if(canDash)
+        if (canDash)
             StartCoroutine(DashTimerCouroutine());
     }
 
