@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5.0f;
     private Vector2 movement;
-    public bool IsFacingRight { get; private set; }
-    public bool CanMove { get; set; }
+    public bool IsFacingRight { get; private set; } = true;
+    public bool CanMove { get; set; } = true;
 
     [Header("Dash Ability Information")]
     [SerializeField] private float dashSpeedMultiplier;
@@ -58,8 +58,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        IsFacingRight = true;
-        CanMove = true;
         defaultMoveSpeed = moveSpeed;
 
         playerControls.Combat.Dash.started += _ => DashAbility();

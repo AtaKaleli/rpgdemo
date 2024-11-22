@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 2727651699878624088}
   - component: {fileID: 1557205586602004000}
   - component: {fileID: 8230544032157687074}
+  - component: {fileID: 155688528}
   m_Layer: 0
   m_Name: Enemy_Slime
   m_TagString: Untagged
@@ -290,6 +291,17 @@ MonoBehaviour:
   knockbackAmount: 10
   knockedTime: 0.15
   whiteFlashMaterial: {fileID: 2100000, guid: fe06f672815da53449be97ebfcd6db46, type: 2}
+--- !u!210 &155688528
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2727651699878624094}
+  m_Enabled: 1
+  m_SortingLayerID: -1527673811
+  m_SortingLayer: 3
+  m_SortingOrder: 0
 --- !u!1 &2727651699922895465
 GameObject:
   m_ObjectHideFlags: 0

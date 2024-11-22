@@ -1,11 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-public class SwordController : MonoBehaviour
+public class Sword : MonoBehaviour, IWeapon
 {
-    private PlayerControls playerControls;
+
     private Animator anim;
     private PlayerController playerController;
+    private ActiveWeapon activeWeapon;
 
     [Header("Slash Effect Information")]
     [SerializeField] private GameObject slashVFX;
@@ -17,61 +18,33 @@ public class SwordController : MonoBehaviour
 
     [Header("Sword Attack Information")]
     [SerializeField] private float swordAttackCD;
-    private bool isAttacking;
-    private bool canAttack = true;
+
+
 
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
+        activeWeapon = GetComponentInParent<ActiveWeapon>();
         anim = GetComponent<Animator>();
         playerController = GetComponentInParent<PlayerController>();
     }
 
-    private void OnEnable()
+
+    public void Attack()
     {
-        playerControls.Enable();
-    }
 
-    private void Start()
-    {
-        playerControls.Combat.Attack.started += _ => StartAttacking();
-        playerControls.Combat.Attack.canceled += _ => StopAttacking();
+        anim.SetTrigger("attack");
+        swordCollider.SetActive(true);
+        InstantiateSlashVFX();
+        StartCoroutine(AttackTimeCoroutine());
 
-    }
-
-
-    private void Update()
-    {
-        Attack();
-    }
-
-    private void StartAttacking()
-    {
-        isAttacking = true;
-    }
-
-    private void StopAttacking()
-    {
-        isAttacking = false;
-    }
-
-    private void Attack()
-    {
-        if (isAttacking && canAttack)
-        {
-            anim.SetTrigger("attack");
-            swordCollider.SetActive(true);
-            InstantiateSlashVFX();
-            StartCoroutine(AttackTimeCoroutine());
-        }
     }
 
     private IEnumerator AttackTimeCoroutine()
     {
-        canAttack = false;
+        activeWeapon.CanAttack = false;
         yield return new WaitForSeconds(swordAttackCD);
-        canAttack = true;
+        activeWeapon.CanAttack = true;
     }
 
 

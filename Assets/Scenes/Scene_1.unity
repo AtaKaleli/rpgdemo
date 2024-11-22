@@ -189,22 +189,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4387270317077692568, guid: 7c7b66fc656c92a44973d2f91c9162d2, type: 3}
   m_PrefabInstance: {fileID: 1238079223}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &155688518 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2727651699878624094, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
-  m_PrefabInstance: {fileID: 1292844445}
-  m_PrefabAsset: {fileID: 0}
---- !u!210 &155688528
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155688518}
-  m_Enabled: 1
-  m_SortingLayerID: -1527673811
-  m_SortingLayer: 3
-  m_SortingOrder: 0
 --- !u!1 &183110931
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 183110932}
   m_Layer: 6
-  m_Name: Sword
+  m_Name: Weapon_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,6 +299,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a5c1a8056d78234085f73678c7f4cc1, type: 3}
+--- !u!1 &345203431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345203432}
+  - component: {fileID: 345203433}
+  m_Layer: 6
+  m_Name: Weapon_MagicStaff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &345203432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345203431}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1289297445}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &345203433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345203431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f3eab0e41c3fb4c984ef6f8fa70220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &366850950
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +613,7 @@ GameObject:
   - component: {fileID: 421075058}
   - component: {fileID: 421075060}
   m_Layer: 0
-  m_Name: SwordBody
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13532,6 +13560,50 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1534974527}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+--- !u!1 &1213420199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213420200}
+  - component: {fileID: 1213420201}
+  m_Layer: 6
+  m_Name: Weapon_Bow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1213420200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213420199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1289297445}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1213420201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213420199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4280b6c2807786a41a0704507164e92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1214424673
 GameObject:
   m_ObjectHideFlags: 0
@@ -13788,6 +13860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1289297445}
+  - component: {fileID: 1289297446}
   m_Layer: 6
   m_Name: ActiveWeapon
   m_TagString: Untagged
@@ -13808,9 +13881,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 183110932}
+  - {fileID: 1213420200}
+  - {fileID: 345203432}
   m_Father: {fileID: 1756661440}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1289297446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289297444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3681ae35673bd84381c722a5b054238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentActiveWeapon: {fileID: 421075060}
 --- !u!1001 &1292844445
 PrefabInstance:
   m_ObjectHideFlags: 0
