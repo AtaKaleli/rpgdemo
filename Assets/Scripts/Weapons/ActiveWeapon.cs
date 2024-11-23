@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class ActiveWeapon : MonoBehaviour
 {
+
+    public static ActiveWeapon instace;
+
     private PlayerControls playerControls;
 
-    [SerializeField] private MonoBehaviour currentActiveWeapon;
+    public MonoBehaviour CurrentActiveWeapon { get; set; }
+    
 
     private bool isAttacking;
     public bool CanAttack { get; set; } = true;
 
     private void Awake()
     {
+        if (instace != null && instace != this.gameObject)
+            Destroy(this);
+        else
+            instace = this;
+
         playerControls = new PlayerControls();
     }
 
@@ -23,6 +32,7 @@ public class ActiveWeapon : MonoBehaviour
 
     private void Start()
     {
+
         playerControls.Combat.Attack.started += _ => StartAttacking();
         playerControls.Combat.Attack.canceled += _ => StopAttacking();
     }
@@ -47,7 +57,7 @@ public class ActiveWeapon : MonoBehaviour
     {
         if(isAttacking && CanAttack)
         {
-            IWeapon weapon = currentActiveWeapon.GetComponent<IWeapon>();
+            IWeapon weapon = CurrentActiveWeapon.GetComponent<IWeapon>();
             weapon.Attack();
         }
     }

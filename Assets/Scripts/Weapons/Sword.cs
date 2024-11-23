@@ -11,7 +11,6 @@ public class Sword : MonoBehaviour, IWeapon
     [Header("Slash Effect Information")]
     [SerializeField] private GameObject slashVFX;
     [SerializeField] private Transform slashRespawnPoint;
-    [SerializeField] private Transform slashRespawnParent;
     [SerializeField] private GameObject swordCollider;
 
     private GameObject slashAnim;
@@ -24,7 +23,7 @@ public class Sword : MonoBehaviour, IWeapon
 
     private void Awake()
     {
-        activeWeapon = GetComponentInParent<ActiveWeapon>();
+        activeWeapon = ActiveWeapon.instace;
         anim = GetComponent<Animator>();
         playerController = GetComponentInParent<PlayerController>();
     }
@@ -51,7 +50,7 @@ public class Sword : MonoBehaviour, IWeapon
 
     private void InstantiateSlashVFX()
     {
-        slashAnim = Instantiate(slashVFX, slashRespawnPoint.position, Quaternion.identity, slashRespawnParent);
+        slashAnim = Instantiate(slashVFX, slashRespawnPoint.position, Quaternion.identity, activeWeapon.transform.GetChild(0).transform);
     }
 
     public void SwingUpFlipAnimEvent()
