@@ -18,7 +18,7 @@ public class Sword : MonoBehaviour, IWeapon
     [Header("Sword Attack Information")]
     [SerializeField] private float swordAttackCD;
 
-
+    
 
 
     private void Awake()
@@ -27,6 +27,24 @@ public class Sword : MonoBehaviour, IWeapon
         anim = GetComponent<Animator>();
         playerController = GetComponentInParent<PlayerController>();
     }
+
+    private void Update()
+    {
+        HandleSwordRotation();
+    }
+
+    private void HandleSwordRotation()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+
+        if (PlayerController.instance.IsFacingRight)
+            transform.parent.rotation = Quaternion.Euler(0, 0, angle);
+        else
+            transform.parent.rotation = Quaternion.Euler(0, 180, angle);
+    }
+
+
 
 
     public void Attack()
