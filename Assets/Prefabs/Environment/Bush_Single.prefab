@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1756143159245325510}
   - component: {fileID: 1195072255082505734}
   - component: {fileID: 7052800773005193159}
-  - component: {fileID: 1613679468998264363}
+  - component: {fileID: 5078449798435630245}
   m_Layer: 0
   m_Name: Bush_Single
   m_TagString: Untagged
@@ -102,7 +102,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &1613679468998264363
+--- !u!114 &5078449798435630245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,8 +111,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5743151302221899462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 599c5c6c1113997489c35d7bb4fc0898, type: 3}
+  m_Script: {fileID: 11500000, guid: 056a95ff4aff668479bd232b8712e162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bushDeathVFX: {fileID: 6310503256955861314, guid: a46e3af75221ca443b035b0a06e5d55d, type: 3}
-  VFXParent: {fileID: 0}
+  startingHealth: 1
+  deathVFX: {fileID: 6310503256955861314, guid: a46e3af75221ca443b035b0a06e5d55d, type: 3}
+  deathVFXParent: {fileID: 0}
+  canKnockable: 0
+  canDamageable: 1

@@ -13,7 +13,7 @@ public class ActiveWeapon : MonoBehaviour
     
 
     private bool isAttacking;
-    public bool CanAttack { get; set; } = true;
+    public bool CanAttack { get; private set; } = true;
 
     private void Awake()
     {
@@ -59,7 +59,19 @@ public class ActiveWeapon : MonoBehaviour
         {
             IWeapon weapon = CurrentActiveWeapon.GetComponent<IWeapon>();
             weapon.Attack();
+            StartCoroutine(AttackTimeCoroutine());
         }
+    }
+
+    private IEnumerator AttackTimeCoroutine()
+    {
+        CanAttack = false;
+
+        IWeapon weapon = CurrentActiveWeapon.GetComponent<IWeapon>();
+        float attackCooldown = weapon.GetWeapon().weaponCooldown;
+        yield return new WaitForSeconds(attackCooldown);
+
+        CanAttack = true;
     }
 
 

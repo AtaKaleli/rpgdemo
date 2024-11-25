@@ -15,9 +15,9 @@ public class Sword : MonoBehaviour, IWeapon
 
     private GameObject slashAnim;
 
-    [Header("Sword Attack Information")]
-    [SerializeField] private float swordAttackCD;
 
+    [Header("Weapon SO")]
+    [SerializeField] private WeaponSO weapon;
     
 
 
@@ -49,20 +49,17 @@ public class Sword : MonoBehaviour, IWeapon
 
     public void Attack()
     {
-
         anim.SetTrigger("attack");
         swordCollider.SetActive(true);
         InstantiateSlashVFX();
-        StartCoroutine(AttackTimeCoroutine());
-
     }
 
-    private IEnumerator AttackTimeCoroutine()
+    public WeaponSO GetWeapon()
     {
-        activeWeapon.CanAttack = false;
-        yield return new WaitForSeconds(swordAttackCD);
-        activeWeapon.CanAttack = true;
+        return weapon;
     }
+
+    
 
 
 
@@ -73,6 +70,10 @@ public class Sword : MonoBehaviour, IWeapon
 
     public void SwingUpFlipAnimEvent()
     {
+        if (slashAnim == null)
+            return;
+
+
         if (playerController.IsFacingRight)
             slashAnim.transform.rotation = Quaternion.Euler(180, 0, 0);
         else
@@ -81,6 +82,9 @@ public class Sword : MonoBehaviour, IWeapon
 
     public void SwingDownFlipAnimEvent()
     {
+        if (slashAnim == null)
+            return;
+
         if (playerController.IsFacingRight)
             slashAnim.transform.rotation = Quaternion.Euler(0, 0, 0);
         else
@@ -92,4 +96,5 @@ public class Sword : MonoBehaviour, IWeapon
         swordCollider.SetActive(false);
     }
 
+    
 }

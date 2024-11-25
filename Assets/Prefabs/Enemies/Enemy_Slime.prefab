@@ -99,9 +99,9 @@ GameObject:
   - component: {fileID: 2727651699878624089}
   - component: {fileID: 2727651699878624071}
   - component: {fileID: 2727651699878624088}
-  - component: {fileID: 1557205586602004000}
   - component: {fileID: 8230544032157687074}
   - component: {fileID: 155688528}
+  - component: {fileID: 886973626}
   m_Layer: 0
   m_Name: Enemy_Slime
   m_TagString: Untagged
@@ -261,21 +261,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
---- !u!114 &1557205586602004000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2727651699878624094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b87ab3c367833844bcd546fae1f5dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
-  deathVFX: {fileID: 176811718872722425, guid: 919d482324851bf428e461941c286ae0, type: 3}
-  deathVFXParent: {fileID: 2727651699878624090}
 --- !u!114 &8230544032157687074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +287,23 @@ SortingGroup:
   m_SortingLayerID: -1527673811
   m_SortingLayer: 3
   m_SortingOrder: 0
+--- !u!114 &886973626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2727651699878624094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056a95ff4aff668479bd232b8712e162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  deathVFX: {fileID: 176811718872722425, guid: 919d482324851bf428e461941c286ae0, type: 3}
+  deathVFXParent: {fileID: 0}
+  canKnockable: 1
+  canDamageable: 1
 --- !u!1 &2727651699922895465
 GameObject:
   m_ObjectHideFlags: 0

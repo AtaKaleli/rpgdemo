@@ -5,7 +5,8 @@ using UnityEngine;
 public class MagicStaff : MonoBehaviour, IWeapon
 {
 
-
+    [Header("Weapon SO")]
+    [SerializeField] private WeaponSO weapon;
 
     private void Update()
     {
@@ -37,5 +38,10 @@ public class MagicStaff : MonoBehaviour, IWeapon
     public void Attack()
     {
         print("attack with magic staff");
+    }
+
+    public WeaponSO GetWeapon()
+    {
+        return weapon;
     }
 }

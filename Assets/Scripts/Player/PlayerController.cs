@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5.0f;
     private Vector2 movement;
     public bool IsFacingRight { get; private set; } = true;
+    public int FacingDirection { get; private set; } = 1;
     public bool CanMove { get; set; } = true;
 
     [Header("Dash Ability Information")]
@@ -117,6 +118,7 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         IsFacingRight = !IsFacingRight;
+        FacingDirection = FacingDirection * -1;
         transform.Rotate(0, 180, 0);
     }
 

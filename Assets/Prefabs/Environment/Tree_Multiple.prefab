@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8757918466554951875}
   - component: {fileID: 1624248704443993537}
   - component: {fileID: 7342738419903027375}
+  - component: {fileID: 4770099833317334896}
   m_Layer: 0
   m_Name: Tree_Single (2)
   m_TagString: Untagged
@@ -118,6 +119,23 @@ MonoBehaviour:
   maxAlpha: 1
   minAlpha: 0.8
   fadeTime: 0.5
+--- !u!114 &4770099833317334896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487484872647901458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056a95ff4aff668479bd232b8712e162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 0
+  deathVFX: {fileID: 0}
+  deathVFXParent: {fileID: 0}
+  canKnockable: 0
+  canDamageable: 0
 --- !u!1 &3588257619528525286
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,6 +148,7 @@ GameObject:
   - component: {fileID: 7881363179606809426}
   - component: {fileID: 5889244297086858124}
   - component: {fileID: 4577798763801543441}
+  - component: {fileID: 4916196192326379391}
   m_Layer: 0
   m_Name: Tree_Single (1)
   m_TagString: Untagged
@@ -236,6 +255,23 @@ MonoBehaviour:
   maxAlpha: 1
   minAlpha: 0.8
   fadeTime: 0.5
+--- !u!114 &4916196192326379391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588257619528525286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056a95ff4aff668479bd232b8712e162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 0
+  deathVFX: {fileID: 0}
+  deathVFXParent: {fileID: 0}
+  canKnockable: 0
+  canDamageable: 0
 --- !u!1 &3946244481934438965
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +428,7 @@ GameObject:
   - component: {fileID: 7071494114956407176}
   - component: {fileID: 7071494114956407174}
   - component: {fileID: 7071494114956407175}
+  - component: {fileID: 1491807448154788064}
   m_Layer: 0
   m_Name: Tree_Single
   m_TagString: Untagged
@@ -498,6 +535,23 @@ MonoBehaviour:
   maxAlpha: 1
   minAlpha: 0.8
   fadeTime: 0.5
+--- !u!114 &1491807448154788064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071494114956407178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056a95ff4aff668479bd232b8712e162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 0
+  deathVFX: {fileID: 0}
+  deathVFXParent: {fileID: 0}
+  canKnockable: 0
+  canDamageable: 0
 --- !u!1 &9091396101958191975
 GameObject:
   m_ObjectHideFlags: 0

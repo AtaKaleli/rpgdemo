@@ -123,6 +123,7 @@ MonoBehaviour:
   slashRespawnPoint: {fileID: 3909339312556293238}
   swordCollider: {fileID: 3909339312699398491}
   swordAttackCD: 0.4
+  weapon: {fileID: 11400000, guid: 4f1bc8dd235ccdd4ba5740948f2fc4a7, type: 2}
 --- !u!1 &3909339311643786425
 GameObject:
   m_ObjectHideFlags: 0
