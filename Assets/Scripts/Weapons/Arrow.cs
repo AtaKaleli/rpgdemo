@@ -4,13 +4,16 @@ public class Arrow : MonoBehaviour
 {
 
     private Rigidbody2D rb;
+    private WeaponSO weapon;
 
     [Header("Arrow Settings")]
     [SerializeField] private float arrowSpeed;
-    [SerializeField] private int arrowDestroyTime = 5;
+    private Transform startPos;
+    
 
     [Header("Death VFX")]
     [SerializeField] private GameObject deathVFX;
+
 
 
     public Vector2 ArrowDirection { get; set; }
@@ -22,18 +25,22 @@ public class Arrow : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        weapon = ActiveWeapon.instace.CurrentActiveWeapon.GetComponent<IWeapon>().GetWeapon();
     }
 
     private void Start()
     {
         SetArrowRotation();
-        Destroy(this.gameObject, arrowDestroyTime);
+        startPos = ActiveWeapon.instace.transform;
     }
 
-
+    
     private void FixedUpdate()
     {
+        DetectFireDistance();
         ArrowMovement();
+
+        print(Vector2.Distance(transform.position, startPos.position));
     }
 
     private void ArrowMovement()
@@ -52,6 +59,14 @@ public class Arrow : MonoBehaviour
         {
             Destroy(this.gameObject);
             Instantiate(deathVFX, transform.position, Quaternion.identity);
+        }
+    }
+
+    private void DetectFireDistance()
+    {
+        if(Vector2.Distance(transform.position,startPos.position) > weapon.weaponRange)
+        {
+            Destroy(this.gameObject);
         }
     }
 

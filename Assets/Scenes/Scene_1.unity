@@ -49686,6 +49686,11 @@ PolygonCollider2D:
       - {x: -25, y: 25}
       - {x: -25, y: -25}
       - {x: 25, y: -25}
+--- !u!4 &1542757253 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7237367053952604978, guid: 5665c9552100839479e3d24e6985e5e1, type: 3}
+  m_PrefabInstance: {fileID: 7237367054683472799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1597661001
 GameObject:
   m_ObjectHideFlags: 0
@@ -50081,8 +50086,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 886973625}
+  - {fileID: 1542757253}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2002134355
 PrefabInstance:
@@ -50492,11 +50498,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1982477376}
     m_Modifications:
     - target: {fileID: 7237367053952604978, guid: 5665c9552100839479e3d24e6985e5e1, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7237367053952604978, guid: 5665c9552100839479e3d24e6985e5e1, type: 3}
       propertyPath: m_LocalPosition.x

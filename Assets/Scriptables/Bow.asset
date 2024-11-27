@@ -15,3 +15,4 @@ MonoBehaviour:
   weaponPref: {fileID: 4050412280500150109, guid: 0a8858f475a3c2e449e7ce076225f562, type: 3}
   weaponCooldown: 0.6
   damageAmount: 1
+  weaponRange: 12
