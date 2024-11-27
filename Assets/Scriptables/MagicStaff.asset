@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31bb5f9f14a6934394eaef1e854f0da, type: 3}
   m_Name: MagicStaff
   m_EditorClassIdentifier: 
-  weaponIdx: 2
   weaponPref: {fileID: 2029129726635319853, guid: 5300f04a896c448428744ac733ee5dd7, type: 3}
   weaponCooldown: 1.5
+  damageAmount: 5

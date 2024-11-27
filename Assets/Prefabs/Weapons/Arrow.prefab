@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 6052609628606792467}
   - component: {fileID: 374421106737757927}
   - component: {fileID: 4161595880134695157}
-  - component: {fileID: 4024740621326991166}
+  - component: {fileID: 138322254993202354}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -312,7 +312,7 @@ SortingGroup:
   m_SortingLayerID: -1527673811
   m_SortingLayer: 3
   m_SortingOrder: 0
---- !u!114 &4024740621326991166
+--- !u!114 &138322254993202354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 445025763679435294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842c230e4d6edaf46ae77aee9e824a17, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b91c2198db96524e95ba853b802e5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
+  weapon: {fileID: 11400000, guid: 846e5ad2e6f98134a9e60c491e496bb2, type: 2}

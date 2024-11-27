@@ -11,7 +11,7 @@ public class Arrow : MonoBehaviour
 
     [Header("Death VFX")]
     [SerializeField] private GameObject deathVFX;
-  
+
 
     public Vector2 ArrowDirection { get; set; }
     public float ArrowAngle { get; set; }
@@ -48,10 +48,10 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<BaseHealth>() != null)
+        if (!collision.isTrigger)
         {
-            Instantiate(deathVFX, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            Instantiate(deathVFX, transform.position, Quaternion.identity);
         }
     }
 

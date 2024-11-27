@@ -122,7 +122,6 @@ MonoBehaviour:
   slashVFX: {fileID: 5141964631493176037, guid: df805fe7277ebad4bbbb6500a07c5dc8, type: 3}
   slashRespawnPoint: {fileID: 3909339312556293238}
   swordCollider: {fileID: 3909339312699398491}
-  swordAttackCD: 0.4
   weapon: {fileID: 11400000, guid: 4f1bc8dd235ccdd4ba5740948f2fc4a7, type: 2}
 --- !u!1 &3909339311643786425
 GameObject:
@@ -199,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3909339312699398488}
   - component: {fileID: 3909339312699398489}
-  - component: {fileID: 3909339312699398494}
+  - component: {fileID: 6657694600084643499}
   m_Layer: 6
   m_Name: SwordCollider
   m_TagString: Untagged
@@ -252,7 +251,7 @@ PolygonCollider2D:
       - {x: -0.18, y: -1.21}
       - {x: 1.8, y: -1.21}
       - {x: 1.8, y: 1.8}
---- !u!114 &3909339312699398494
+--- !u!114 &6657694600084643499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,7 +260,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3909339312699398491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842c230e4d6edaf46ae77aee9e824a17, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b91c2198db96524e95ba853b802e5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
+  weapon: {fileID: 11400000, guid: 4f1bc8dd235ccdd4ba5740948f2fc4a7, type: 2}
