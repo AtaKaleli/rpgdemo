@@ -8,4 +8,5 @@ public class WeaponSO : ScriptableObject
     public GameObject weaponPref;
     public float weaponCooldown;
     public int damageAmount;
+    public int weaponRange;
 }

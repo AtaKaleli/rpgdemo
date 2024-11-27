@@ -15,7 +15,6 @@ public class DamageSource : MonoBehaviour
         {
             IDamageable damage = collision.GetComponent<IDamageable>();
             damage.Damage(damageAmount);
-            print("given damage: " + damageAmount);
         }
     }
 
