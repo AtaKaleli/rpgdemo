@@ -298,8 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9d9da8765fb0e4aafe3db4694aedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowSpeed: 20
-  arrowDestroyTime: 5
+  projectileSpeed: 20
   deathVFX: {fileID: 8925019381931477442, guid: a6b424a253537c74e827797bed6134ab, type: 3}
 --- !u!210 &4161595880134695157
 SortingGroup:

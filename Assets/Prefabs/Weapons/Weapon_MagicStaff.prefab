@@ -131,10 +131,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: e118bd20b7bd4ce42885ded8e6b278d1, type: 2}
-  laserPref: {fileID: 7814850718396044330, guid: dbf0e25db1bc3a944a69613432e6fcec, type: 3}
-  laserSpawnPoint: {fileID: 209744806091678298}
-  bowDistanceX: 1
-  bowDistanceY: 0.25
+  weaponDistanceX: 1
+  weaponDistanceY: 0.25
+  projectilePref: {fileID: 7814850718396044330, guid: dbf0e25db1bc3a944a69613432e6fcec, type: 3}
+  projectileSpawnPoint: {fileID: 209744806091678298}
+  startPosition: {fileID: 6104761565781016591}
+  movePosition: {fileID: 1539425460853375842}
+  moveSpeed: 1
 --- !u!1 &6665371542276359306
 GameObject:
   m_ObjectHideFlags: 0

@@ -112,10 +112,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 846e5ad2e6f98134a9e60c491e496bb2, type: 2}
-  bowDistanceX: 1
-  bowDistanceY: 0.25
-  arrowPref: {fileID: 445025763679435294, guid: 032f878970ed8a9489aed8bf8a88b190, type: 3}
-  arrowSpawnPoint: {fileID: 3821103739713931073}
+  weaponDistanceX: 1
+  weaponDistanceY: 0.25
+  projectilePref: {fileID: 445025763679435294, guid: 032f878970ed8a9489aed8bf8a88b190, type: 3}
+  projectileSpawnPoint: {fileID: 3821103739713931073}
   startPosition: {fileID: 2049455131328665927}
   movePosition: {fileID: 6785273697184899615}
   moveSpeed: 10

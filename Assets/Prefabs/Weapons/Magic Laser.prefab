@@ -162,6 +162,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e6f65cbb0fc864481ce2689864e981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowSpeed: 5
-  arrowDestroyTime: 5
+  projectileSpeed: 10
   deathVFX: {fileID: 0}
