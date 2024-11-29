@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
-
+    private Knockback knockback;
 
 
     [Header("Movement")]
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         trailRenderer = GetComponentInChildren<TrailRenderer>();
-
+        knockback = GetComponent<Knockback>();
 
 
         DontDestroyOnLoad(gameObject);
@@ -67,8 +67,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (knockback.IsKnocked)
+            return;
         
-
         HandleMovementInput();
         AnimationController();
         FlipController();
@@ -78,6 +79,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (knockback.IsKnocked)
+            return;
+
+
         Move();
     }
 

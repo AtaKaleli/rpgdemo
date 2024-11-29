@@ -8,7 +8,6 @@ public class BaseHealth : MonoBehaviour, IDamageable
     private Knockback knockback;
 
     [SerializeField] private GameObject deathVFX;
-    [SerializeField] private Transform deathVFXParent;
 
     [SerializeField] private bool canKnockable;
     [SerializeField] private bool canDamageable;
@@ -27,22 +26,22 @@ public class BaseHealth : MonoBehaviour, IDamageable
         currentHealth = startingHealth;
     }
 
-    public void Damage(int damage)
+    public void Damage(int damage, Transform damageSource)
     {
-        KnockbackController();
+        KnockbackController(damageSource);
         currentHealth -= damage;
         DetectHeath();
     }
 
-    private void KnockbackController()
+    private void KnockbackController(Transform damageSource)
     {
         if (canKnockable)
         {
             if (!knockback.CanBeKnocked)
                 return;
 
+            knockback.GetKnockedBack(damageSource);
             StartCoroutine(knockback.KnockbackCoroutine());
-            knockback.GetKnockedBack(PlayerController.instance.transform);
         }
 
     }

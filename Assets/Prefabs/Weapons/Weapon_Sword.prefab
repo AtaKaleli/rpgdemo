@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3909339311643786430}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Weapon_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3909339312556293238}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SlashVFX_RespawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 3909339312699398488}
   - component: {fileID: 3909339312699398489}
   - component: {fileID: 6657694600084643499}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SwordCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

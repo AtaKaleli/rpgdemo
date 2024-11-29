@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2727651699742195028}
   - component: {fileID: 2727651699742195027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,12 +97,13 @@ GameObject:
   - component: {fileID: 2727651699878624092}
   - component: {fileID: 2727651699878624093}
   - component: {fileID: 2727651699878624089}
+  - component: {fileID: 155688528}
   - component: {fileID: 2727651699878624071}
   - component: {fileID: 2727651699878624088}
   - component: {fileID: 8230544032157687074}
-  - component: {fileID: 155688528}
   - component: {fileID: 886973626}
-  m_Layer: 0
+  - component: {fileID: 57783296515846675}
+  m_Layer: 7
   m_Name: Enemy_Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,6 +237,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!210 &155688528
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2727651699878624094}
+  m_Enabled: 1
+  m_SortingLayerID: -1527673811
+  m_SortingLayer: 3
+  m_SortingOrder: 0
 --- !u!114 &2727651699878624071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,17 +288,6 @@ MonoBehaviour:
   knockbackAmount: 10
   knockedTime: 0.15
   whiteFlashMaterial: {fileID: 2100000, guid: fe06f672815da53449be97ebfcd6db46, type: 2}
---- !u!210 &155688528
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2727651699878624094}
-  m_Enabled: 1
-  m_SortingLayerID: -1527673811
-  m_SortingLayer: 3
-  m_SortingOrder: 0
 --- !u!114 &886973626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,9 +302,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   deathVFX: {fileID: 176811718872722425, guid: 919d482324851bf428e461941c286ae0, type: 3}
-  deathVFXParent: {fileID: 0}
   canKnockable: 1
   canDamageable: 1
+--- !u!114 &57783296515846675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2727651699878624094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11825f082756d164dad8935f5bec7b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 11400000, guid: 2c04718c727da024cb2ee33184157cc7, type: 2}
 --- !u!1 &2727651699922895465
 GameObject:
   m_ObjectHideFlags: 0

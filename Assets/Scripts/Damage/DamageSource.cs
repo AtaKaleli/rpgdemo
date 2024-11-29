@@ -14,7 +14,7 @@ public class DamageSource : MonoBehaviour
         if(collision.GetComponent<IDamageable>() != null)
         {
             IDamageable damage = collision.GetComponent<IDamageable>();
-            damage.Damage(damageAmount);
+            damage.Damage(damageAmount,this.gameObject.transform);
         }
     }
 
