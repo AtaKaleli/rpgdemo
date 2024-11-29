@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class BaseProjectile : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private WeaponSO weapon;
+    protected Rigidbody2D rb;
+    protected WeaponSO weapon;
+    protected SpriteRenderer sr;
+
 
     [Header("Projectile Settings")]
-    [SerializeField] private float projectileSpeed;
-    private Transform startPos;
+    [SerializeField] protected float projectileSpeed;
+    protected float weaponRange;
+    protected Transform startPos;
 
 
     [Header("Death VFX")]
-    [SerializeField] private GameObject deathVFX;
+    [SerializeField] protected GameObject deathVFX;
 
 
 
@@ -23,46 +26,40 @@ public class BaseProjectile : MonoBehaviour
 
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         weapon = ActiveWeapon.instace.CurrentActiveWeapon.GetComponent<IWeapon>().GetWeapon();
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         SetProjectileRotation();
         startPos = ActiveWeapon.instace.transform;
+        weaponRange = weapon.weaponRange;
+
     }
 
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         DetectFireDistance();
-        ProjectileMovement();
+        
     }
 
-    private void ProjectileMovement()
-    {
-        rb.MovePosition(rb.position + ProjectileDirection * (projectileSpeed * Time.fixedDeltaTime));
-    }
 
-    private void SetProjectileRotation()
+
+    protected virtual void SetProjectileRotation()
     {
         transform.rotation = Quaternion.Euler(0, 0, ProjectileAngle);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.isTrigger)
-        {
-            Destroy(this.gameObject);
-            Instantiate(deathVFX, transform.position, Quaternion.identity);
-        }
-    }
 
-    private void DetectFireDistance()
+
+    protected virtual void DetectFireDistance()
     {
+        
         if (Vector2.Distance(transform.position, startPos.position) > weapon.weaponRange)
         {
             Destroy(this.gameObject);
