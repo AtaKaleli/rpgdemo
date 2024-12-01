@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     public bool IsFacingRight { get; private set; } = true;
     public int FacingDirection { get; private set; } = 1;
-    public bool CanMove { get; set; } = true;
 
     [Header("Dash Ability Information")]
     [SerializeField] private float dashSpeedMultiplier;
@@ -66,14 +65,23 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (knockback.IsKnocked && !GameManager.instance.AllowPlayerActions())
-            return;
-        
-        HandleMovementInput();
         AnimationController();
+        
+        if (knockback.IsKnocked || !GameManager.instance.AllowPlayerActions())
+        {
+            StopPlayerMovement();
+            return;
+        }
+
+        HandleMovementInput();
         FlipController();
 
 
+    }
+
+    private void StopPlayerMovement()
+    {
+        movement = new Vector2(0, 0);
     }
 
     private void FixedUpdate()
@@ -96,8 +104,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.instance.AllowPlayerActions())
             movement = playerControls.Movement.Move.ReadValue<Vector2>();
-        else
-            movement = new Vector2(0, 0);
+
     }
 
     private void Move()
