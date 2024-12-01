@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScreenFade : MonoBehaviour
@@ -9,11 +10,6 @@ public class ScreenFade : MonoBehaviour
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration;
 
-
-    private void Start()
-    {
-        StartCoroutine(FadeEffectCoroutine(1f, 0f));
-    }
 
 
     public IEnumerator FadeEffectCoroutine(float startAlpha, float desiredAlpha, Action method = null)
@@ -34,4 +30,5 @@ public class ScreenFade : MonoBehaviour
         PlayerController.instance.CanMove = true;
         method?.Invoke();
     }
+
 }

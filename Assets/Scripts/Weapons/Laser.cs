@@ -33,7 +33,7 @@ public class Laser : BaseProjectile
     
     private IEnumerator IncreaseLaserLengthCoroutine()
     {
-
+        PlayerController.instance.CanMove = false;
         float elapsedTime = 0f;
 
         while(sr.size.x < weaponRange)
@@ -52,6 +52,8 @@ public class Laser : BaseProjectile
 
     private IEnumerator FadeOutLaserCoroutine()
     {
+        capsuleCollider.enabled = false;
+        PlayerController.instance.CanMove = true;
         float elapsedTime = 0f;
 
         while(elapsedTime < fadeOutTime)

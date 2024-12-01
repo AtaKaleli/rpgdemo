@@ -36,6 +36,8 @@ public class BaseRotatedWeapon : MonoBehaviour, IWeapon
 
     protected virtual void Update()
     {
+        if (!PlayerController.instance.CanMove)
+            return;
 
         HandleWeaponRotation();
         FlipController();

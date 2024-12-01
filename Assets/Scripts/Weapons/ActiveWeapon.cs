@@ -39,6 +39,9 @@ public class ActiveWeapon : MonoBehaviour
 
     private void Update()
     {
+        if (!PlayerController.instance.CanMove)
+            return;
+
         Attack();
     }
 

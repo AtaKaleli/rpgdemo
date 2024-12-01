@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
         trailRenderer = GetComponentInChildren<TrailRenderer>();
         knockback = GetComponent<Knockback>();
 
-
         DontDestroyOnLoad(gameObject);
 
     }
@@ -67,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (knockback.IsKnocked)
+        if (knockback.IsKnocked || !CanMove)
             return;
         
         HandleMovementInput();
@@ -79,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (knockback.IsKnocked)
+        if (knockback.IsKnocked || !CanMove)
             return;
 
 

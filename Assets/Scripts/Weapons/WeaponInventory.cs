@@ -5,8 +5,8 @@ public class WeaponInventory : MonoBehaviour
 
     private PlayerControls playerControls;
 
-    [SerializeField] private Transform weaponRespawnPoint;
-    [SerializeField] private Transform weaponRespawnParent;
+    private Transform weaponRespawnPoint;
+    private Transform weaponRespawnParent;
     [SerializeField] private GameObject[] activeWeaponSlot;
 
     private int currentWeaponIdx = 0;
@@ -15,6 +15,8 @@ public class WeaponInventory : MonoBehaviour
     private void Awake()
     {
         playerControls = new PlayerControls();
+
+        
     }
 
     private void OnEnable()
@@ -25,6 +27,12 @@ public class WeaponInventory : MonoBehaviour
 
     private void Start()
     {
+        if (weaponRespawnPoint == null && weaponRespawnParent == null)
+        {
+            weaponRespawnParent = ActiveWeapon.instace.transform;
+            weaponRespawnPoint = ActiveWeapon.instace.transform;
+        }
+
         playerControls.Inventory.Keyboard.started += ctx => ToggleActiveWeaponSlot((int)ctx.ReadValue<float>());
         InstantiateWeapon(0);
     }
