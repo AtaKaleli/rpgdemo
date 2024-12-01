@@ -30,6 +30,9 @@ public class Sword : MonoBehaviour, IWeapon
 
     private void Update()
     {
+        if (!GameManager.instance.AllowPlayerActions())
+            return;
+
         HandleSwordRotation();
     }
 

@@ -14,7 +14,7 @@ public class ScreenFade : MonoBehaviour
 
     public IEnumerator FadeEffectCoroutine(float startAlpha, float desiredAlpha, Action method = null)
     {
-        PlayerController.instance.CanMove = false;
+        GameManager.instance.CurrentState = GameManager.GameState.Freezed;
         float elapsedTime = 0;
 
         while(elapsedTime < fadeDuration)
@@ -27,8 +27,9 @@ public class ScreenFade : MonoBehaviour
             yield return null;
         }
 
-        PlayerController.instance.CanMove = true;
         method?.Invoke();
+        yield return new WaitForSeconds(0.25f);
+        GameManager.instance.CurrentState = GameManager.GameState.Playing;
     }
 
 }

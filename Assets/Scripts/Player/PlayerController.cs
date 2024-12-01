@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (knockback.IsKnocked || !CanMove)
+        if (knockback.IsKnocked && !GameManager.instance.AllowPlayerActions())
             return;
         
         HandleMovementInput();
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (knockback.IsKnocked || !CanMove)
+        if (knockback.IsKnocked || !GameManager.instance.AllowPlayerActions())
             return;
 
 
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovementInput()
     {
-        if (CanMove)
+        if (GameManager.instance.AllowPlayerActions())
             movement = playerControls.Movement.Move.ReadValue<Vector2>();
         else
             movement = new Vector2(0, 0);
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if(CanMove)
+        if(GameManager.instance.AllowPlayerActions())
             rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
