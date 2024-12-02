@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 20
+  startPos: {fileID: 0}
   deathVFX: {fileID: 8925019381931477442, guid: a6b424a253537c74e827797bed6134ab, type: 3}
 --- !u!210 &4161595880134695157
 SortingGroup:

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Laser : BaseProjectile
 {
 
-
+    private WeaponSO weapon;
 
     [Header("Laser growth information")]
     [SerializeField] private float laserGrowTime = 1f;
@@ -20,6 +20,7 @@ public class Laser : BaseProjectile
     {
         base.Awake();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        weapon = ActiveWeapon.instace.CurrentActiveWeapon.GetComponent<IWeapon>().GetWeapon();
 
         ccStartSizeX = capsuleCollider.size.x;
         ccStartOffsetX = capsuleCollider.offset.x;
@@ -28,6 +29,11 @@ public class Laser : BaseProjectile
     protected override void Start()
     {
         base.Start();
+        startPos = ActiveWeapon.instace.transform;
+
+        projectileRange = weapon.weaponRange;
+        UpdateProjectileRange(projectileRange);
+
         StartCoroutine(IncreaseLaserLengthCoroutine());
     }
     
@@ -36,13 +42,13 @@ public class Laser : BaseProjectile
         GameManager.instance.CurrentState = GameManager.GameState.Freezed;
         float elapsedTime = 0f;
 
-        while(sr.size.x < weaponRange)
+        while(sr.size.x < projectileRange)
         {
             elapsedTime += Time.deltaTime;
 
-            sr.size = new Vector2(Mathf.Lerp(1f, weaponRange, elapsedTime / laserGrowTime), 1f);
-            capsuleCollider.size = new Vector2(Mathf.Lerp(ccStartSizeX, weaponRange, elapsedTime / laserGrowTime), capsuleCollider.size.y);
-            capsuleCollider.offset = new Vector2(Mathf.Lerp(ccStartOffsetX, weaponRange/2.0f, elapsedTime / laserGrowTime), 0f);
+            sr.size = new Vector2(Mathf.Lerp(1f, projectileRange, elapsedTime / laserGrowTime), 1f);
+            capsuleCollider.size = new Vector2(Mathf.Lerp(ccStartSizeX, projectileRange, elapsedTime / laserGrowTime), capsuleCollider.size.y);
+            capsuleCollider.offset = new Vector2(Mathf.Lerp(ccStartOffsetX, projectileRange/2.0f, elapsedTime / laserGrowTime), 0f);
             yield return null;
         }
 

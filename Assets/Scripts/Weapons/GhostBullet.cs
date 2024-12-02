@@ -1,13 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : BaseProjectile
+public class GhostBullet : BaseProjectile
 {
-    private WeaponSO weapon;
+    [SerializeField] private EnemySO enemy;
 
     protected override void Awake()
     {
         base.Awake();
-        weapon = ActiveWeapon.instace.CurrentActiveWeapon.GetComponent<IWeapon>().GetWeapon();
         startPos = ActiveWeapon.instace.transform;
     }
 
@@ -20,7 +21,7 @@ public class Arrow : BaseProjectile
     protected override void Start()
     {
         base.Start();
-        projectileRange = weapon.weaponRange;
+        projectileRange = enemy.bulletRange;
         UpdateProjectileRange(projectileRange);
     }
 
@@ -37,6 +38,4 @@ public class Arrow : BaseProjectile
             Instantiate(deathVFX, transform.position, Quaternion.identity);
         }
     }
-
-
 }

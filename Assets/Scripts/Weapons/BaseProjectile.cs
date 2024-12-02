@@ -5,14 +5,15 @@ using UnityEngine;
 public class BaseProjectile : MonoBehaviour
 {
     protected Rigidbody2D rb;
-    protected WeaponSO weapon;
+    //protected WeaponSO weapon;
     protected SpriteRenderer sr;
 
 
     [Header("Projectile Settings")]
     [SerializeField] protected float projectileSpeed;
-    protected float weaponRange;
     protected Transform startPos;
+    protected float projectileRange;
+
 
 
     [Header("Death VFX")]
@@ -29,15 +30,13 @@ public class BaseProjectile : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        weapon = ActiveWeapon.instace.CurrentActiveWeapon.GetComponent<IWeapon>().GetWeapon();
         sr = GetComponent<SpriteRenderer>();
+        
     }
 
     protected virtual void Start()
     {
         SetProjectileRotation();
-        startPos = ActiveWeapon.instace.transform;
-        weaponRange = weapon.weaponRange;
 
     }
 
@@ -48,7 +47,10 @@ public class BaseProjectile : MonoBehaviour
         
     }
 
-
+    public void UpdateProjectileRange(float range)
+    {
+        projectileRange = range;
+    }
 
     protected virtual void SetProjectileRotation()
     {
@@ -60,7 +62,7 @@ public class BaseProjectile : MonoBehaviour
     protected virtual void DetectFireDistance()
     {
         
-        if (Vector2.Distance(transform.position, startPos.position) > weapon.weaponRange)
+        if (Vector2.Distance(transform.position, startPos.position) > projectileRange)
         {
             Destroy(this.gameObject);
         }
