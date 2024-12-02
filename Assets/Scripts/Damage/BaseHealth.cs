@@ -2,59 +2,30 @@ using UnityEngine;
 
 public class BaseHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int startingHealth;
+    [SerializeField] protected int startingHealth;
+    [SerializeField] protected GameObject deathVFX;
 
-    private int currentHealth;
-    private Knockback knockback;
-
-    [SerializeField] private GameObject deathVFX;
-
-    [SerializeField] private bool canKnockable;
-    [SerializeField] private bool canDamageable;
-
-
-    private void Awake()
-    {
-        if (canKnockable)
-            knockback = GetComponent<Knockback>();
-    }
+    protected int currentHealth;
 
 
 
-    private void Start()
+    protected virtual void Start()
     {
         currentHealth = startingHealth;
     }
 
-    public void Damage(int damage, Transform damageSource)
+    public virtual void Damage(int damage)
     {
-        KnockbackController(damageSource);
         currentHealth -= damage;
         DetectHeath();
     }
 
-    private void KnockbackController(Transform damageSource)
+    protected virtual void DetectHeath()
     {
-        if (canKnockable)
+        if (currentHealth <= 0)
         {
-            if (!knockback.CanBeKnocked)
-                return;
-
-            knockback.GetKnockedBack(damageSource);
-            StartCoroutine(knockback.KnockbackCoroutine());
-        }
-
-    }
-
-    private void DetectHeath()
-    {
-        if (canDamageable)
-        {
-            if (currentHealth <= 0)
-            {
-                Instantiate(deathVFX, transform.position, Quaternion.identity);
-                Destroy(this.gameObject);
-            }
+            Instantiate(deathVFX, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
         }
     }
 }

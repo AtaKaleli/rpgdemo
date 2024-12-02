@@ -9,7 +9,7 @@ public class GhostBullet : BaseProjectile
     protected override void Awake()
     {
         base.Awake();
-        startPos = ActiveWeapon.instace.transform;
+        //startPos = 
     }
 
     protected override void FixedUpdate()

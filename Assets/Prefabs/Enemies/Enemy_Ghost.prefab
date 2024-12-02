@@ -148,8 +148,8 @@ GameObject:
   - component: {fileID: 4619088280186190204}
   - component: {fileID: 4619088280186190179}
   - component: {fileID: 1727157554247884569}
-  - component: {fileID: 7332102728421058177}
   - component: {fileID: 7281640067174281256}
+  - component: {fileID: 7836548486450976903}
   m_Layer: 7
   m_Name: Enemy_Ghost
   m_TagString: Untagged
@@ -314,22 +314,6 @@ MonoBehaviour:
   knockbackAmount: 10
   knockedTime: 0.15
   whiteFlashMaterial: {fileID: 2100000, guid: fe06f672815da53449be97ebfcd6db46, type: 2}
---- !u!114 &7332102728421058177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4619088280186190181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 056a95ff4aff668479bd232b8712e162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
-  deathVFX: {fileID: 3192494064223096668, guid: 399418a20d017574dad9a3b48596f7d1, type: 3}
-  canKnockable: 1
-  canDamageable: 1
 --- !u!114 &7281640067174281256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,3 +327,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 2c04718c727da024cb2ee33184157cc7, type: 2}
+--- !u!114 &7836548486450976903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4619088280186190181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b87ab3c367833844bcd546fae1f5dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  deathVFX: {fileID: 3192494064223096668, guid: 399418a20d017574dad9a3b48596f7d1, type: 3}

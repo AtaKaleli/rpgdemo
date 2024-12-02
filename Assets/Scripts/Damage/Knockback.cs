@@ -35,7 +35,8 @@ public class Knockback : MonoBehaviour
 
     public void GetKnockedBack(Transform damageSource)
     {
-        Vector2 force = (transform.position - damageSource.position).normalized * knockbackAmount;
+        rb.velocity = Vector2.zero;
+        Vector2 force = new Vector2(transform.position.x - damageSource.position.x , transform.position.y - damageSource.position.y).normalized * knockbackAmount;
         rb.AddForce(force, ForceMode2D.Impulse);
     }
 
