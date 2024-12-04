@@ -39,7 +39,6 @@ public class Laser : BaseProjectile
     
     private IEnumerator IncreaseLaserLengthCoroutine()
     {
-        GameManager.instance.CurrentState = GameManager.GameState.Freezed;
         float elapsedTime = 0f;
 
         while(sr.size.x < projectileRange)
@@ -59,7 +58,6 @@ public class Laser : BaseProjectile
     private IEnumerator FadeOutLaserCoroutine()
     {
         capsuleCollider.enabled = false;
-        GameManager.instance.CurrentState = GameManager.GameState.Playing;
         float elapsedTime = 0f;
 
         while(elapsedTime < fadeOutTime)

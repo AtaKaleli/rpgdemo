@@ -59,10 +59,10 @@ public class BaseRotatedWeapon : MonoBehaviour, IWeapon
     public void Attack()
     {
 
-        GameObject newArrow = Instantiate(projectilePref, projectileSpawnPoint.position, Quaternion.identity);
+        GameObject newProjectile = Instantiate(projectilePref, projectileSpawnPoint.position, Quaternion.identity);
 
-        newArrow.GetComponent<BaseProjectile>().ProjectileDirection = direction;
-        newArrow.GetComponent<BaseProjectile>().ProjectileAngle = angle;
+        newProjectile.GetComponent<BaseProjectile>().ProjectileDirection = direction;
+        newProjectile.GetComponent<BaseProjectile>().ProjectileAngle = angle;
     }
 
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5141964631493176034}
   - component: {fileID: 5141964631493176035}
   - component: {fileID: 6707015051730845996}
+  - component: {fileID: 4008298225240224174}
   m_Layer: 0
   m_Name: SlashVFX
   m_TagString: Untagged
@@ -119,3 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688dfed5e25b38d4b8c442bf321d6a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4008298225240224174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5141964631493176037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b91c2198db96524e95ba853b802e5e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 4f1bc8dd235ccdd4ba5740948f2fc4a7, type: 2}

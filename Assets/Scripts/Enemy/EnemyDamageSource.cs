@@ -12,6 +12,5 @@ public class EnemyDamageSource : DamageSource
     private void Start()
     {
         SetDamageAmount(enemy.damageAmount);
-
     }
 }

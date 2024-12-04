@@ -12,7 +12,7 @@ public class ActiveWeapon : MonoBehaviour
     public MonoBehaviour CurrentActiveWeapon { get; set; }
     
 
-    private bool isAttacking;
+    public bool isAttacking;
     public bool CanAttack { get; private set; } = true;
 
     private void Awake()
@@ -51,7 +51,7 @@ public class ActiveWeapon : MonoBehaviour
         isAttacking = true;
     }
 
-    private void StopAttacking()
+    public void StopAttacking()
     {
         isAttacking = false;
     }
@@ -59,7 +59,7 @@ public class ActiveWeapon : MonoBehaviour
     private void Attack()
     {
         if(isAttacking && CanAttack)
-        {
+        { 
             IWeapon weapon = CurrentActiveWeapon.GetComponent<IWeapon>();
             weapon.Attack();
             StartCoroutine(AttackTimeCoroutine());
@@ -76,6 +76,8 @@ public class ActiveWeapon : MonoBehaviour
 
         CanAttack = true;
     }
+
+  
 
 
 }

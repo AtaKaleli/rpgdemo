@@ -18,7 +18,7 @@ public class Sword : MonoBehaviour, IWeapon
 
     [Header("Weapon SO")]
     [SerializeField] private WeaponSO weapon;
-    
+
 
 
     private void Awake()
@@ -26,6 +26,7 @@ public class Sword : MonoBehaviour, IWeapon
         activeWeapon = ActiveWeapon.instace;
         anim = GetComponent<Animator>();
         playerController = GetComponentInParent<PlayerController>();
+
     }
 
     private void Update()
@@ -34,6 +35,7 @@ public class Sword : MonoBehaviour, IWeapon
             return;
 
         HandleSwordRotation();
+
     }
 
     private void HandleSwordRotation()

@@ -39,7 +39,7 @@ public class WeaponInventory : MonoBehaviour
 
     private void ToggleActiveWeaponSlot(int slotIdx)
     {
-        if (currentWeaponIdx == slotIdx - 1 || !ActiveWeapon.instace.CanAttack || !GameManager.instance.AllowPlayerActions()) // if player tries to toggle active weapon slot or is attacking with any weapon, just dont allow toggling
+        if (currentWeaponIdx == slotIdx - 1  || !GameManager.instance.AllowPlayerActions()) // if player tries to toggle active weapon slot or is attacking with any weapon, just dont allow toggling
             return;
 
         currentWeaponIdx = slotIdx - 1;
@@ -50,6 +50,7 @@ public class WeaponInventory : MonoBehaviour
 
         activeWeaponSlot[currentWeaponIdx].SetActive(true);
         ChangeActiveWeapon(currentWeaponIdx);
+        ActiveWeapon.instace.StopAttacking();
     }
 
     private void ChangeActiveWeapon(int activeWeaponIdx)

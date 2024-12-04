@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 2727651699878624088}
   - component: {fileID: 8230544032157687074}
   - component: {fileID: 57783296515846675}
-  - component: {fileID: 1241595662613460852}
+  - component: {fileID: 6948170663548926511}
   m_Layer: 7
   m_Name: Enemy_Slime
   m_TagString: Untagged
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 2c04718c727da024cb2ee33184157cc7, type: 2}
---- !u!114 &1241595662613460852
+--- !u!114 &6948170663548926511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
