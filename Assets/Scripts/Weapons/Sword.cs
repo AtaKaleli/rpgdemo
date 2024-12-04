@@ -11,7 +11,7 @@ public class Sword : MonoBehaviour, IWeapon
     [Header("Slash Effect Information")]
     [SerializeField] private GameObject slashVFX;
     [SerializeField] private Transform slashRespawnPoint;
-    [SerializeField] private GameObject swordCollider;
+    //[SerializeField] private GameObject swordCollider;
 
     private GameObject slashAnim;
 
@@ -55,7 +55,7 @@ public class Sword : MonoBehaviour, IWeapon
     public void Attack()
     {
         anim.SetTrigger("attack");
-        swordCollider.SetActive(true);
+        //swordCollider.SetActive(true);
         InstantiateSlashVFX();
     }
 
@@ -70,7 +70,7 @@ public class Sword : MonoBehaviour, IWeapon
 
     private void InstantiateSlashVFX()
     {
-        slashAnim = Instantiate(slashVFX, slashRespawnPoint.position, Quaternion.identity, activeWeapon.transform.GetChild(0).transform);
+        slashAnim = Instantiate(slashVFX, slashRespawnPoint.position, Quaternion.identity);
     }
 
     public void SwingUpFlipAnimEvent()
@@ -96,10 +96,11 @@ public class Sword : MonoBehaviour, IWeapon
             slashAnim.transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
+    /*
     public void DisableSwordColliderAnimEvent()
     {
-        swordCollider.SetActive(false);
+        //swordCollider.SetActive(false);
     }
-
+    */
     
 }

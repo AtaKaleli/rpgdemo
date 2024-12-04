@@ -957,7 +957,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1756661440}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &561999329
 SpriteRenderer:
@@ -13310,7 +13310,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1756661440}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1029219665
 CircleCollider2D:
@@ -13855,7 +13855,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1756661440}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1289297446
 MonoBehaviour:
@@ -13869,7 +13869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3681ae35673bd84381c722a5b054238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAttacking: 0
 --- !u!1001 &1292844445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49787,7 +49786,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1756661440}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534974525
 GameObject:
@@ -50046,10 +50045,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1029219664}
   - {fileID: 1514360123}
   - {fileID: 561999328}
   - {fileID: 1289297445}
-  - {fileID: 1029219664}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

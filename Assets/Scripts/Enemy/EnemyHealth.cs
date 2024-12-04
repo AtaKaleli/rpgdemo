@@ -17,6 +17,7 @@ public class EnemyHealth : BaseHealth
     {
         if (collision.GetComponent<PlayerDamageSource>() != null)
         {
+            print(collision);
             PlayerDamageSource playerDamage = collision.GetComponent<PlayerDamageSource>();
             KnockbackController(playerDamage.transform);
         }

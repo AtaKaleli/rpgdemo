@@ -12,7 +12,7 @@ public class ActiveWeapon : MonoBehaviour
     public MonoBehaviour CurrentActiveWeapon { get; set; }
     
 
-    public bool isAttacking;
+    private bool isAttacking;
     public bool CanAttack { get; private set; } = true;
 
     private void Awake()

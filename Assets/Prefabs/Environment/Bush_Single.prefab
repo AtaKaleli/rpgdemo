@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1756143159245325510}
   - component: {fileID: 1195072255082505734}
   - component: {fileID: 7052800773005193159}
-  - component: {fileID: 4466615620098510326}
+  - component: {fileID: 3529688107628389966}
   m_Layer: 8
   m_Name: Bush_Single
   m_TagString: Untagged
@@ -102,7 +102,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &4466615620098510326
+--- !u!114 &3529688107628389966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

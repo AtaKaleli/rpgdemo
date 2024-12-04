@@ -14,7 +14,7 @@ public class BaseHealth : MonoBehaviour, IDamageable
         currentHealth = startingHealth;
     }
 
-    public virtual void Damage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         currentHealth -= damage;
         DetectHeath();
