@@ -261,7 +261,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 93df51d29afb4984ab28cb3ff65f49ba, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!210 &7332102728646925419
 SortingGroup:
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11825f082756d164dad8935f5bec7b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 11400000, guid: 2c04718c727da024cb2ee33184157cc7, type: 2}
+  enemy: {fileID: 11400000, guid: 09ad7b23f2ee611449744e00ecb4160b, type: 2}
 --- !u!114 &7836548486450976903
 MonoBehaviour:
   m_ObjectHideFlags: 0
