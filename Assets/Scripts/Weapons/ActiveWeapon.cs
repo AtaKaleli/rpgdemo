@@ -39,9 +39,6 @@ public class ActiveWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.instance.AllowPlayerActions())
-            return;
-
         Attack();
     }
 

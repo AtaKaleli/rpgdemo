@@ -10,22 +10,16 @@ public class AreaExit : MonoBehaviour
 
     private ScreenFade screenFade;
 
-
-
-    private void Awake()
-    {
-        screenFade = FindAnyObjectByType<ScreenFade>();
-    }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerController>() != null)
         {
+            screenFade = FindAnyObjectByType<ScreenFade>();
             StartCoroutine(screenFade.FadeEffectCoroutine(0, 1, LoadScene));
             SceneManagement.instance.SetPlayerSpawnPosition(exitGateName);
         }
     }
+
 
     private void LoadScene()
     {

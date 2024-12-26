@@ -11,10 +11,13 @@ public class ScreenFade : MonoBehaviour
     [SerializeField] private float fadeDuration;
 
 
-
     public IEnumerator FadeEffectCoroutine(float startAlpha, float desiredAlpha, Action method = null)
     {
-        GameManager.instance.CurrentState = GameManager.GameState.Freezed;
+
+
+        FindAnyObjectByType<PlayerController>().enabled = false;
+        FindAnyObjectByType<ActiveWeapon>().enabled = false;
+
         float elapsedTime = 0;
 
         while(elapsedTime < fadeDuration)
@@ -28,8 +31,10 @@ public class ScreenFade : MonoBehaviour
         }
 
         method?.Invoke();
-        yield return new WaitForSeconds(0.25f);
-        GameManager.instance.CurrentState = GameManager.GameState.Playing;
+
+        yield return new WaitForSeconds(1f);
+        FindAnyObjectByType<PlayerController>().enabled = true;
+        FindAnyObjectByType<ActiveWeapon>().enabled = true;
     }
 
 }

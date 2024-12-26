@@ -31,13 +31,13 @@ public class SceneManagement : MonoBehaviour
         screenFade = FindAnyObjectByType<ScreenFade>();
     }
 
-
+    
     public void SetPlayerSpawnPosition(string spawnGate)
     {
         this.SpawnGate = spawnGate;
     }
 
-
+    
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -52,7 +52,7 @@ public class SceneManagement : MonoBehaviour
     {
         StartCoroutine(screenFade.FadeEffectCoroutine(1f, 0f));
     }
-
+    
 
     
 

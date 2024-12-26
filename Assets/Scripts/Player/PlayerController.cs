@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5.0f;
-    private Vector2 movement;
+    public Vector2 movement;
     public bool IsFacingRight { get; private set; } = true;
     public int FacingDirection { get; private set; } = 1;
 
@@ -66,8 +66,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         AnimationController();
-        
-        if (knockback.IsKnocked || !GameManager.instance.AllowPlayerActions())
+
+        if (knockback.IsKnocked)
         {
             StopPlayerMovement();
             return;
@@ -76,7 +76,8 @@ public class PlayerController : MonoBehaviour
         HandleMovementInput();
         FlipController();
 
-
+        
+        
     }
 
     private void StopPlayerMovement()
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (knockback.IsKnocked || !GameManager.instance.AllowPlayerActions())
+        if (knockback.IsKnocked)
             return;
 
 
@@ -102,15 +103,12 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovementInput()
     {
-        if (GameManager.instance.AllowPlayerActions())
-            movement = playerControls.Movement.Move.ReadValue<Vector2>();
-
+        movement = playerControls.Movement.Move.ReadValue<Vector2>();
     }
 
     private void Move()
     {
-        if(GameManager.instance.AllowPlayerActions())
-            rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
     private void FlipController()
