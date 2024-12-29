@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5.0f;
-    public Vector2 movement;
+    private  Vector2 movement;
     public bool IsFacingRight { get; private set; } = true;
     public int FacingDirection { get; private set; } = 1;
 

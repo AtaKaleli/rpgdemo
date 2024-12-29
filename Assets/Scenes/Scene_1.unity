@@ -13786,11 +13786,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2727651699878624090, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 10.68
       objectReference: {fileID: 0}
     - target: {fileID: 2727651699878624090, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.68
+      value: 6.14
       objectReference: {fileID: 0}
     - target: {fileID: 2727651699878624090, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49959,7 +49959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  movement: {x: 0, y: 0}
   dashSpeedMultiplier: 4
   dashTimer: 0.2
   dashCooldown: 0.8
