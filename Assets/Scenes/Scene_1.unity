@@ -13828,6 +13828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 4104346196287177818, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
+      propertyPath: startingHealth
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32a227725d4529d4f93a172a8f9a97be, type: 3}
 --- !u!1 &1344023583
@@ -50156,7 +50160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1982477376
 Transform:
   m_ObjectHideFlags: 0

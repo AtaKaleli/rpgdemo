@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff26236ad7205340b84f4a771847e98, type: 3}
+  m_Name: Coin
+  m_EditorClassIdentifier: 
+  pickUpPref: {fileID: 6680263867706367887, guid: 116550b91ddc7694e857cfe6d60af997, type: 3}
+  spawnChance: 75

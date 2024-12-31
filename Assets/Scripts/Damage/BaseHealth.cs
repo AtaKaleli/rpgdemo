@@ -15,7 +15,7 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
         currentHealth = startingHealth;
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void ApplyDamage(int damage)
     {
         currentHealth -= damage;
         DetectHeath();
@@ -34,11 +34,11 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
     {
         if (collision.GetComponent<DamageSource>() != null)
         {
-            DetectDamage(collision); 
+            ReceiveDamage(collision); 
         }
     }
 
-    protected abstract void DetectDamage(Collider2D collision);
+    protected abstract void ReceiveDamage(Collider2D collision);
 
     protected void KnockbackController(Transform damageSource)
     {

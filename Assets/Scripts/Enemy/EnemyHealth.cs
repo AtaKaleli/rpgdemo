@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyHealth : BaseHealth
 {
-    protected override void DetectDamage(Collider2D collision)
+    protected override void ReceiveDamage(Collider2D collision)
     {
         if (collision.GetComponent<PlayerDamageSource>() != null)
         {
