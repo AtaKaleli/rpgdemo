@@ -25,6 +25,7 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
     {
         if (currentHealth <= 0)
         {
+            Die();
             Instantiate(deathVFX, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
@@ -39,6 +40,7 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
     }
 
     protected abstract void ReceiveDamage(Collider2D collision);
+    protected abstract void Die();
 
     protected void KnockbackController(Transform damageSource)
     {

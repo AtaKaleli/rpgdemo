@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1912385268056497293}
   - component: {fileID: 1912385268056497292}
   - component: {fileID: 5906913342047779986}
+  - component: {fileID: 7021275524411362419}
   m_Layer: 0
   m_Name: PickUp - Heart
   m_TagString: Untagged
@@ -117,3 +118,15 @@ MonoBehaviour:
   pickUpDistance: 5
   moveSpeed: 0
   accelerate: 0.05
+--- !u!114 &7021275524411362419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912385268056497294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730155a2295551f4db2678ebb56306ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

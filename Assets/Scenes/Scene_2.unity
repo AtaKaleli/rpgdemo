@@ -179,6 +179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f36ac591e13409489758264fbf30abc, type: 3}
+--- !u!4 &46917522 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7737708245592414631, guid: 3f36ac591e13409489758264fbf30abc, type: 3}
+  m_PrefabInstance: {fileID: 46917521}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &143316602 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4387270317077692568, guid: 7c7b66fc656c92a44973d2f91c9162d2, type: 3}
@@ -2368,8 +2373,8 @@ GameObject:
   - component: {fileID: 1024535445}
   - component: {fileID: 1024535447}
   - component: {fileID: 1024535446}
-  - component: {fileID: 1024535448}
   - component: {fileID: 1024535449}
+  - component: {fileID: 1024535450}
   m_Layer: 0
   m_Name: Canopy
   m_TagString: Untagged
@@ -12847,21 +12852,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1024535448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024535444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c116d414419202f45b26735c605f3284, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAlpha: 1
-  minAlpha: 0.8
-  fadeTime: 0.5
 --- !u!19719996 &1024535449
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -12878,6 +12868,21 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!114 &1024535450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024535444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f715cd20eb05ac84c805922aef0465cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAlpha: 1
+  minAlpha: 0.8
+  fadeTime: 0.5
 --- !u!1001 &1175148873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38213,11 +38218,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &1410241568 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8677034412113069642, guid: 3f36ac591e13409489758264fbf30abc, type: 3}
-  m_PrefabInstance: {fileID: 46917521}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1410629732
 GameObject:
   m_ObjectHideFlags: 0
@@ -48068,12 +48068,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1829290294}
-  - {fileID: 1410241568}
-  - {fileID: 1725145214}
+  - {fileID: 46917522}
   - {fileID: 1627266745}
   - {fileID: 4539072622022410751}
   - {fileID: 983088308}
   - {fileID: 252845425}
+  - {fileID: 7033872002231686415}
   - {fileID: 143316602}
   - {fileID: 277528926}
   - {fileID: 1940417829}
@@ -48084,11 +48084,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4387270317077692568, guid: 7c7b66fc656c92a44973d2f91c9162d2, type: 3}
   m_PrefabInstance: {fileID: 4387270317153688098}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1725145214 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4103383068885430405, guid: 8cdb833bcd58a6b4d8b5c3487a25112b, type: 3}
-  m_PrefabInstance: {fileID: 7033872002231686414}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1728358251
 PrefabInstance:
@@ -48983,6 +48978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cdb833bcd58a6b4d8b5c3487a25112b, type: 3}
+--- !u!4 &7033872002231686415 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5606240300422857095, guid: 8cdb833bcd58a6b4d8b5c3487a25112b, type: 3}
+  m_PrefabInstance: {fileID: 7033872002231686414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8823978788549950098
 Transform:
   m_ObjectHideFlags: 0

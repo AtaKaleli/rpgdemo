@@ -22,7 +22,7 @@ public class PickUpSpawner : MonoBehaviour
         if (pickUps[pickUpIdx].spawnChance >= chance)
             Instantiate(pickUps[pickUpIdx].pickUpPref, transform.position, Quaternion.identity);
 
-        print("Chance: " + chance + " Idx: " + pickUpIdx);
+        
        
     }
 
